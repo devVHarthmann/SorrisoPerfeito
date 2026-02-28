@@ -1,47 +1,22 @@
-const services = [
-    {
-      icon: "😊",
-      title: "Clareamento Dental",
-      description: "Recupere o brilho natural do seu sorriso com nossos tratamentos de clareamento."
-    }
-    ,{
-       icon: "😊",
-      title: "Clareamento Dental",
-      description: "Recupere o brilho natural do seu sorriso com nossos tratamentos de clareamento."
-    }
-    ,{
-       icon: "😊",
-      title: "Clareamento Dental",
-      description: "Recupere o brilho natural do seu sorriso com nossos tratamentos de clareamento."
-    }
-    ,{
-       icon: "😊",
-      title: "Clareamento Dental",
-      description: "Recupere o brilho natural do seu sorriso com nossos tratamentos de clareamento."
-    }
-    ,{
-       icon: "😊",
-      title: "Clareamento Dental",
-      description: "Recupere o brilho natural do seu sorriso com nossos tratamentos de clareamento."
-    }
-    ,{
-       icon: "😊",
-      title: "Clareamento Dental",
-      description: "Recupere o brilho natural do seu sorriso com nossos tratamentos de clareamento."
-    }
-];
+const btn = document.getElementById('toTop');
 
-const grid = document.getElementById("servicesGrid");
+window.addEventListener('scroll', () => {
+  btn.style.display = window.scrollY > 300 ? 'block' : 'none';
+});
 
-services.forEach(service => {
-    const card = document.createElement("div");
-    card.className = "service-card";
-    card.innerHTML = `
-      <div class="service-icon">${service.icon}</div>
-      <div class="service-content">
-        <h3>${service.title}</h3>
-        <p>${service.description}</p>
-      </div>
-    `;
-    grid.appendChild(card);
+btn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+const navLinks = document.querySelectorAll('#navBar a');
+
+navLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const targetId = link.getAttribute('href').substring(1);
+    const targetSection = document.getElementById(targetId);
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
 });
