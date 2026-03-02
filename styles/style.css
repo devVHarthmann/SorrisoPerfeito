@@ -5,16 +5,17 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-
-
 :root {
     --grey: #5C5C5C;
+    --grey2: #F9F9F9;
     --azulb: #1FA4AB;
     --dblue: #223B71;
     --white: #FFFFFF;
     --white2: #F9F9F920;
     --blue: #2F71FF;
+    --blue2: #094080;
     --off: #F9F9F9;
+
 }
 
 header {
@@ -83,12 +84,12 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, var(--dblue), #094080);
+    background: linear-gradient(135deg, var(--dblue), var(--blue2));
     color: var(--white);
     width: 100%;
     min-height: 90vh;
     padding: 40px 20px;
-    
+
 }
 
 #txtimg {
@@ -277,7 +278,7 @@ main {
     border-radius: 30px;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
     gap: 25px;
-     border: solid 1px var(--white);
+    border: solid 1px var(--white);
 }
 
 .about-content h3 {
@@ -348,6 +349,21 @@ main {
     gap: 5px;
 }
 
+.avaliacao-foto {
+    width: 100%;
+    display: flex;
+
+    padding: 20px;
+    padding-left: 0px;
+}
+
+.avaliacao-content img {
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+
+}
+
 .avaliacao-card,
 .about-card,
 .service-card {
@@ -356,7 +372,7 @@ main {
 
 .avaliacao-content h3 {
     font-size: 18pt;
-    color: var(--blue);
+    color: var(--grey);
 }
 
 .avaliacao-content p {
@@ -372,23 +388,258 @@ main {
     transition: all 0.3s ease;
 }
 
-.avaliacao-card:hover{
+.avaliacao-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 7px 15x rgba(88, 87, 87, 0.3);
     transition: all 0.3s ease;
 }
 
 #toTop {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  padding: 10px 18px;
-  background: #333;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  display: none; /* escondido inicialmente */
-  font-size: 20px;
-  
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 10px 18px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+    font-size: 20px;
+
 }
+
+
+#contact {
+    background: var(--grey2);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#contactInfo {
+    width: 100%;
+    padding: 50px;
+}
+
+#contactInfo strong {
+    font-size: 15pt;
+    color: var(--dblue);
+
+}
+
+#contactsHd {
+    width: 100%;
+    height: 20vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#contactsHd span {
+    font-size: 36pt;
+    color: var(--dblue);
+    font-weight: 600;
+    margin-top: 5vh;
+}
+
+#contactsHd p {
+    font-size: 15pt;
+    color: var(--grey);
+}
+
+#contactMsg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 50px;
+}
+
+#contactForm button {  
+    margin-top: 20px;
+    background-color: var(--dblue);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    width: 300px;
+    font-size: 17px;
+    transition: all 0.3s ease;
+}
+
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+    gap: 20px;
+
+}
+
+#contactForm input {
+    padding: 5px;
+    width: 700px;
+    border: 1px solid var(--dblue);
+    border-radius: 5px;
+    height: 40px;
+
+}
+
+#contactForm textarea {
+    padding: 5px;
+    width: 700px;
+    height: 200px;
+    border: 1px solid var(--dblue);
+    border-radius: 5px;
+    resize: none;
+}
+
+input[readonly] {
+    pointer-events: none;
+    outline: none;
+}
+
+#toggleTheme {
+    position: fixed;
+    z-index: 10;
+    top: 20px;
+    right: 20px;
+    background-color: var(--dblue);
+    color: var(--white);
+    border: none;
+    border-radius: 50px;
+    padding: 10px;
+    cursor: pointer;
+}
+#weatherShow {
+    display: flex;
+    padding: 30px;
+    align-items: center;
+    gap: 10px;
+    width: 300px;
+    height: 200px;
+    background-color: var(--blue);
+    border-radius: 25px;
+    margin-top: 3vw;
+}
+
+#temp{
+    color: var(--off);
+    font-size: 30pt;
+    
+}
+#weatherIcon{
+    width: 100px;
+    background-color: rgb(207, 201, 201);
+    border-radius: 50%;
+}
+
+body.dark {
+    --grey: #aaaaaa;
+    --grey2: #1a1a1a;
+    --white: #ffffff;
+    --white2: #ffffff20;
+    --off: #2a2a2a;
+    --dblue: #0f1a31;
+    --blue: #5a9fff;
+    --blue2: #052447;
+    --azulb: #1a8a90;
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+body.dark #toggleTheme {
+    background-color: #4a7fc1;
+}
+
+body.dark header {
+    background-color: #1e1e1e;
+
+}
+
+body.dark #navBar li a {
+    color: #cccccc;
+}
+
+body.dark .service-card,
+body.dark .avaliacao-card {
+    background-color: #2a2a2a;
+    color: #f0f0f0;
+}
+
+body.dark #contact {
+    background-color: #1a1a1a;
+}
+
+body.dark #contactForm input,
+body.dark #contactForm textarea {
+    background-color: #2a2a2a;
+    color: #f0f0f0;
+    border-color: #4a7fc1;
+}
+
+body.dark #toTop {
+    background: #4a7fc1;
+}
+
+body.dark #logoT1 {
+    color: white;
+}
+
+body.dark #contactsHd span {
+    color: #4a7fc1;
+}
+
+body.dark #contactInfo strong {
+    color: #4a7fc1;
+
+}
+
+#contactForm span {
+    color: var(--dblue);
+    font-size: 18pt;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 250px;
+    background-color: var(--dblue);
+}
+#footerTxt {
+    display: flex;
+    flex-direction: column;
+    color: var(--white);
+    justify-content: center;
+    align-items: center;
+    font-size: 12pt;
+    margin-top: 10px;
+    gap: 40px;
+}
+#logoTxt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#T1 {
+    font-size: 32pt;
+    font-weight: 700;
+    color: var(--white);
+}
+
+#T2 {
+    font-size: 14pt;
+    color: var(--white);
+}
+
+

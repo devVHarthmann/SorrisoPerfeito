@@ -1,10 +1,10 @@
-const btn = document.getElementById('toTop');
+const btnT = document.getElementById('toTop');
 
 window.addEventListener('scroll', () => {
-  btn.style.display = window.scrollY > 300 ? 'block' : 'none';
+  btnT.style.display = window.scrollY > 300 ? 'block' : 'none';
 });
 
-btn.addEventListener('click', () => {
+btnT.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
@@ -20,3 +20,4 @@ navLinks.forEach(link => {
     }
   });
 });
+
